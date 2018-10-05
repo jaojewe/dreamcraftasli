@@ -79,34 +79,8 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 });
 
- client.on('message', message => {
-if(message.content.startsWith("+slots")) {
-  let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
-  let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
-  let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
-  let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
-  let we;
-  if(slots1 === slots2 && slots2 === slots3) {
-    we = "Win!"
-  } else {
-    we = "Lose!"
-  }
-  message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
-}
-});
 
 
-
-
-
-client.on('message', message => {
-  if (true) {
-if (message.content === '+support') {
-      message.author.send(' https://discord.gg/ySnVHNd لـ أي استفسار').catch(e => console.log(e.stack));
-
-    }
-   } 
-  });
   
 client.on("message", message => {
     var prefix = "+";
@@ -131,7 +105,8 @@ client.on("message", message => {
                           }
 });
 
-	
+
+
     client.on('message', message => {
               if (!message.channel.guild) return;
       if(message.content =='+members')
@@ -219,6 +194,8 @@ client.on('message', message => {
     }
 });
 
+
+
 	client.on('message', msg => {
   if (msg.content === 'fuck') {
    msg.delete(30)
@@ -227,14 +204,6 @@ client.on('message', message => {
 });
 
 
-
-client.on('message', message=> {
-    if (message.author.bot) return;
-    if (message.isMentioned(client.user))
-    {
-    message.reply(" يا ليل وش تبي يا ورع !!");
-    }
-});
 
 
 client.on('message', message => {
@@ -266,6 +235,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} kicked from the server ! 
 });
 
   
+
   client.on('message', message => {
    if (message.content === "+id") {
    let embed = new Discord.RichEmbed()
