@@ -99,7 +99,7 @@ function errormsg(message, err, cmd) {
   
 
 
-const translate = require('google-translate-api'); //npm i google-translate-api
+const translate = require('google-translate-api'); 
  
 client.on("message", message => {
  
