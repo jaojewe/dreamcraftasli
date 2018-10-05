@@ -31,25 +31,6 @@ client.user.setGame(`DreamCraft`,"http://twitch.tv/S-F")
 
 
 
-client.on('message', async function (message)  {
-if(message.content.startsWith(prefix+"server")) {
-const vlevel = ['None', 'Low (Must have verified email)', 'Medium (Must be register for 5 mineuts)', 'High (Need to wait 10 minutes)', 'Very High (Need verified phone on account)']
-const members = await message.guild.members.filter(m=> m.presence.status === 'online').size + message.guild.members.filter(m=> m.presence.status === 'idle').size + message.guild.members.filter(m=> m.presence.status === 'dnd').size  
-message.channel.send(new discord.RichEmbed() 
-.setAuthor(`${message.guild.name} [Server Icon URL]`, message.guild.iconURL)
-.setURL(message.guild.iconURL)
-.addField('🆔 ايدي السيرفر', message.guild.id, true)
-.addField('👑 اونر السيرفر', message.guild.owner, true)
-.addField('🗺 منطقة', message.guild.region, true)
-.addField(`👥 الاعضاء [${message.guild.memberCount}]`, `${members} online` ,true)
-.addField(`💬 القنوات`, `**${message.guild.channels.filter(c => c.type === 'category').size}** الاقسام | **${message.guild.channels.filter(c=> c.type === 'text').size}**روم كتابي | **${message.guild.channels.filter(c=> c.type === 'voice').size}** روم صوتي` ,true)
-.addField(`💠 مستوى التحقق`, vlevel[message.guild.verificationLevel] ,true)
-.addField(`👔 الرتب`, message.guild.roles.size ,true)
-.addField(`📆 تم انشأوها`, message.guild.createdAt ,true)
-)
-}
-})
-
 
 const HeRo = new Discord.Client();
 client.on('message', message => {
@@ -98,7 +79,51 @@ function errormsg(message, err, cmd) {
 }
   
 
-
+client.on('message', function(message) {
+  if (message.content.startsWith(prefix + 'info')) {
+  message.delete;
+  message.channel.send("", {
+      embed: {
+          color : 0xE15306,
+  author :{name: message.author.name},
+          description : "",
+          title : "Server Info",
+          fields : [
+              {
+   name : '**Server Name**',
+   value : message.guild.name,
+   inline : true
+            },{
+   name : '**Owner**',
+   value : message.guild.owner.user.tag,
+   inline : true
+ },{
+    name :'**Verification Level**',
+    value : message.guild.verificationLevel,
+    inline : true
+ },{
+    name : '**Region**',
+    value : message.guild.region,
+    inline : true
+ },{
+   name : '**Members Count**',
+   value : message.guild.memberCount,
+   inline : true
+ },{
+   name : '**Humans**',
+   value : message.guild.members.filter(m => m.user).size,
+   inline : true
+ },{
+   name : '**Bots**',
+   value : message.guild.members.filter(m => m.user.bot).size,
+   inline : true
+ }],
+},
+footer : {
+   text : 'RANDOM'
+          }
+    });
+}
 
 	  
 	  
