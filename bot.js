@@ -54,30 +54,7 @@ var prefix = "+";
 
 
   
-function errormsg(message, err, cmd) {
-    message.channel.send(errmsg) 
-    client.channels.get("497757586477547521").send(`**:warning: Error**`, {embed: {
-    description: `\`\`\`${err}\`\`\` `,
-    fields: [
-        {
-        name: "**server**",
-        value: message.guild.name,
-        inline: true
-        }, 
-        {
-        name: "**user**",
-        value: message.author.username,
-        inline: true
-        }, 
-        {
-        name: "**command**",
-        value: cmd,
-        inline: true
-        }
-    ]}})
-    return; 
-}
-  
+
 
 client.on('message', message => {
 const prefix = "+";
