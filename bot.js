@@ -649,7 +649,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    var prefix = "-"
+    var prefix = "+"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -735,6 +735,9 @@ client.on('message' , message => {
         message.channel.sendEmbed(embed)
     }
 });
+
+
+
 
 
 
