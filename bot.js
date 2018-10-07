@@ -105,20 +105,7 @@ client.on('message', message => {
 
 
  
- client.on('message', message => {
-   if (message.content.startsWith("+عقاب")) {
-                if(!message.channel.guild) return message.reply('** This command only for servers**');
-  var embed = new Discord.RichEmbed()
-  .setColor('RANDOM')
-   .setThumbnail(message.author.avatarURL) 
- .addField('Drak . Bot' ,
-  `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
-  message.channel.sendEmbed(embed);
-  console.log('[38ab] Send By: ' + message.author.username)
-    }
-});
-
-
+ 
 
  
 client.on('message', function(msg) {
@@ -170,6 +157,74 @@ client.on('message', message => {
     }
  
 });
+
+
+
+
+client.on('message', message => {
+
+    if (message.content.startsWith("+رابط")) {        
+  message.channel.createInvite({
+        thing: true,
+        maxUses: 100,
+        maxAge: 86400
+    }).then(invite =>  
+      message.author.sendMessage(invite.url)
+    )
+    const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription(" :white_check_mark: تم ارسال الرابط على الخاص ")
+      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
+              const Embed11 = new Discord.RichEmbed()
+        .setColor("RANDOM")
+                .setAuthor(message.guild.name, message.guild.iconURL)
+        .setDescription(`
+---------------------
+ :kissing_closed_eyes:  - هذا الرابط صالح ل 100 مستخدم فقط
+---------------------
+ :smiley: - هذا الرابط صالح لمده 24 ساعه فقط
+---------------------`)
+      message.author.sendEmbed(Embed11)
+    }
+ 
+});
+
+
+
+client.on('message', msg => { 
+      if (msg.content.startsWith(`+اقتراح`)) {
+         let args = msg.content.split(" ").slice(1);
+        if (!args[1]) return msg.reply(`يجب كتابه الاقتراح`)
+        if (msg.guild.channels.find('name', 'suggestions')) {
+          msg.guild.channels.find('name', 'suggestions').send(`
+        الاقتراح من : ${msg.member}
+        الاقتراح : **${args.join(" ").split(msg.mentions.members.first()).slice(' ')}**
+        `)
+        }
+      }
+      })
+
+
+
+client.on('message', message => {
+            if (message.content.startsWith("+rules")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **اولا** ' ,' **ممنوع السب** ')
+.addField('     **ثانيا** ' ,' **لا تسوي سبام ** ')
+.addField('     **ثالثا** ' ,' **لا تزعج الاخرين** ')
+.addField('    **رابعا**' ,' **ممنوع الاعلانات** ')
+.addField('    **خامسا**' ,' **احترم الاخرين** ')
+.addField('    **سادسا**' ,' **لا تنشر في الشات او بل خاص** ')
+.addField('    **سابعا**' ,' **لا تنشر روابط!** ')
+.addField('    **ثامنا**' ,' **لا تسوي سبام ايموجي** ')
+.addField('    **تاسعا**' ,' **لا تطلب رتبه الاداره !** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
 
 
 
