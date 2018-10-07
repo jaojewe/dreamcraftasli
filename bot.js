@@ -1276,6 +1276,100 @@ message.channel.send(Dream);
 
  
 
+client.on("message", message => {
+    var prefix = "+";
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+ if (!args[1]) {
+                                let x5bz1 = new Discord.RichEmbed()
+                                .setDescription("+clear <number>")
+                                .setColor("#0000FF")
+                                message.channel.sendEmbed(x5bz1);
+                            } else {
+                            let messagecount = parseInt(args[1]);
+                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                                                          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                            let x5bz2 = new Discord.RichEmbed()
+                                                            .setColor("#008000")
+                                .setDescription(":white_check_mark: | Delete " + args[1] + " Message!")
+                                                                                        message.delete("..");
+                                message.channel.sendEmbed(x5bz2);
+                            }
+                          }
+});
+
+
+ client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help") {
+		 message.channel.send('**The Message Was Sent On Private**');
+            
+	
+		 
+
+
+ message.author.sendMessage(`
+Bot BY ! Dream ! hamodii_yt#8531
+             DreamCraft       BOT
+╔[❖════════════❖]╗
+             Prefix = ' + '
+╚[❖════════════❖]╝
+
+╔[❖════════════❖]╗
+             Admin Commands
+╚[❖════════════❖]╝
+ 
+ ❖ +mutevoice < mention > ➾ mutevoice member
+
+ ❖ +Un Mute Channel ➾ unmutechannel
+ 
+ ❖ +Mute channel ➾ Mute Channel
+ 
+ ❖ +unmutevoice <mention> ➾ unmutevoice member
+
+ ❖ +ct ➾ create channel With Your Type
+  
+ ❖ +cv ➾ create Voice channel
+
+
+╔[❖════════════❖]╗
+            General  Commands
+╚[❖════════════❖]╝ 
+
+❖ +date ➾ see date 
+
+❖ +hack ➾ لعبه الهاك 
+
+❖ +skin ➾ Your MineCraft Skin
+
+
+❖ +ping ➾ to see ping 
+
+❖ +info ➾ informations 
+
+❖  +contact ➾ ارسال رساله لصاحب البوت
+
+❖  +slots ➾ Slots
+
+╔[❖════════════❖]╗
+                    Welcome
+╚[❖════════════❖]╝
+
+==================================================================
+
+By ! Dream ! hamodii_yt#8531
+
+==================================================================
+
+bot invite link: https://discordapp.com/oauth2/authorize?client_id=475285011646644224&permissions=8&scope=bot
+
+==================================================================
+
+`);
+
+    }
+});
 
  
 
