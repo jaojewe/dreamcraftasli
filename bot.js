@@ -28,7 +28,7 @@ client.user.setGame(`DreamCraft`,"http://twitch.tv/S-F")
   console.log('')
 });
 
-
+const prefix = "+"
 
 
 
@@ -1300,7 +1300,11 @@ client.on("message", message => {
 });
 
 
- client.on('message', message => {
+
+	
+		 
+
+client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help") {
 		 message.channel.send('**The Message Was Sent On Private**');
@@ -1310,7 +1314,7 @@ client.on("message", message => {
 
 
  message.author.sendMessage(`
-Bot BY ! Dream ! hamodii_yt#8531
+Bot BY hamodii_yt#8531
              DreamCraft       BOT
 ╔[❖════════════❖]╗
              Prefix = ' + '
@@ -1370,7 +1374,7 @@ bot invite link: https://discordapp.com/oauth2/authorize?client_id=4752850116466
 
     }
 });
-
  
+
 
 client.login(process.env.BOT_TOKEN);
