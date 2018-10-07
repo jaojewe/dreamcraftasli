@@ -805,7 +805,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -825,7 +825,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -847,7 +847,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -870,7 +870,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -892,7 +892,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -910,7 +910,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -930,7 +930,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -953,7 +953,7 @@ client.on('message', message => {
         color: 0x06DF00,
         description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
         footer: {
-          text: "♕ Drak . Bot ♕"
+          text: "♕ Dream . Bot ♕"
         }
       }}).then(msg => {msg.delete(4000)});
                           }
@@ -1095,7 +1095,107 @@ if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return mess
 });
  
 
+const perfix = '+';
+client.on('message', msg => {
+ if (msg.content.startsWith(prefix + 'send')) {
+      let args = msg.content.split(' ').slice(1)
+      if (!args[0]) return msg.reply(`**منشن الشخص اولا**`)
+      if (!args[1]) return msg.reply(`**ما هي الرساله المطلوب ارسالها**`)
+      let Emoko = msg.mentions.members.first()
+      if (!Emoko) return msg.reply(`**يجب تحديد الشخص**`)
+      let EmokoEmbed = new Discord.RichEmbed()
+      .setTitle(`**رسالة جديدة:new_moon_with_face: **`)
+      .setDescription(args.join(" "))
+
+      client.users.get(`${Emoko.id}`).send(EmokoEmbed)
+      msg.reply(`**تم ارسال الرساله**`)
+    }
+});
 
 
+
+    client.on('message' , message => {
+var prefix = "+"
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+
+
+client.users.get("428890200735875073").send(
+    "\n" + "**" + "● السيرفر :" + "**" +
+    "\n" + "**" + "» " + message.guild.name + "**" +
+    "\n" + "**" + " ● المرسل : " + "**" +
+    "\n" + "**" + "» " + message.author.tag + "**" +
+    "\n" + "**" + " ● الرسالة : " + "**" +
+    "\n" + "**" + args + "**")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription('📬 تم ارسال الرسالة الى صاحب البوت بنجاح')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("Drak . Bot")
+
+
+message.channel.send(embed);
+
+
+}
+
+});
+
+
+
+ client.on("message", message => {
+	 var prefix = "+"
+	 if (!message.content.startsWith(prefix)) return;
+		let command = message.content.split(" ") [0];
+		command = command.slice(prefix.length);
+			if(command === "skin") {
+					const args = message.content.split(" ").slice(1).join(" ")
+			if (!args) return message.channel.send("** Type your skin name **");
+			const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
+		message.channel.send(image)
+        }
+    });
+	
+
+ client.on('message', message => {
+if (message.content.startsWith('+inv-info')) {
+let oi = message.mentions.users.first() ? message.mentions.users.first().id : message.author.id ; 
+  let img = message.mentions.users.first() ? message.mentions.users.first().username : message.author.username;
+  let imagemm = message.mentions.users.first() ? message.mentions.users.first().avatarURL : message.author.avatarURL
+  message.guild.fetchInvites().then(invs => {
+    let member = client.guilds.get(message.guild.id).members.get(oi);
+    let personalInvites = invs.filter(i => i.inviter.id === oi);
+    let urll = invs.filter(i => i.inviter.id === oi);
+    let link = urll.reduce((p , v) => v.url +` , Total de membros recrutados no convite: ${v.uses}.\n`+ p, `\nServidor: ${message.guild.name} \n `);
+    let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+   let exec = personalInvites.reduce((p, v) => v.inviter);
+ let possibleInvites = [['Total de membros recrutados:']];
+possibleInvites.push([inviteCount, exec]);
+        let user = message.mentions.users.first() || message.author;
+        let mem = message.guild.member(user);
+        let millisJoined = new Date().getTime() - mem.joinedAt.getTime();
+        let daysJoined = millisJoined / 1000 / 60 / 60 / 24;
+const alpha = new Discord.RichEmbed()
+.setAuthor(img)
+.addField('🏆 Invite Infos',  `\n\n► لقد قمت بدعوة ما مجموعه \`\`${Number(inviteCount)}\`\` عضو.\n\n► لقد انضممت لسرفر مند\`${daysJoined.toFixed(0)}\`يوم .\n\n► لقد انضممت بهذه الدعوة\`${exec}\``,true)
+.setThumbnail(imagemm)
+.setColor(0x4959e9);
+message.channel.send(alpha);
+
+});
+
+};
+  });
+	
+	
+	
 
 client.login(process.env.BOT_TOKEN);
