@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '.'
+const prefix = '+'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -28,7 +28,6 @@ client.user.setGame(`DreamCraft`,"http://twitch.tv/S-F")
   console.log('')
 });
 
-const prefix = "+"
 
 
 
@@ -1314,7 +1313,7 @@ client.on('message', message => {
 
 
  message.author.sendMessage(`
-Bot BY hamodii_yt#8531
+Bot BY ! Dream ! hamodii_yt#8531
              DreamCraft       BOT
 ╔[❖════════════❖]╗
              Prefix = ' + '
@@ -1326,9 +1325,13 @@ Bot BY hamodii_yt#8531
  
  ❖ +mutevoice < mention > ➾ mutevoice member
 
- ❖ +Un Mute Channel ➾ unmutechannel
+ ❖ +UnMute Channel ➾ unmutechannel
  
- ❖ +Mute channel ➾ Mute Channel
+ ❖ +Mute ➾ Mute 
+
+ ❖ +UnMute  ➾ unmute
+ 
+ ❖ +Mute ➾ Mute Channel
  
  ❖ +unmutevoice <mention> ➾ unmutevoice member
 
@@ -1354,7 +1357,7 @@ Bot BY hamodii_yt#8531
 
 ❖  +contact ➾ ارسال رساله لصاحب البوت
 
-❖  +slots ➾ Slots
+❖  +myinv ➾ Your Invite In Server
 
 ╔[❖════════════❖]╗
                     Welcome
@@ -1375,6 +1378,57 @@ bot invite link: https://discordapp.com/oauth2/authorize?client_id=4752850116466
     }
 });
  
+
+  
+  client.on('message',message =>{
+      var prefix = "+";
+ if(message.content.split(' ')[0].toLowerCase() == prefix + 'myinv') {
+let guild = message.guild
+var codes = [""]
+ var nul = 0
+      
+guild.fetchInvites()
+.then(invites => {
+invites.forEach(invite => {
+if (invite.inviter === message.author) {
+    nul+=invite.uses
+codes.push(`discord.gg/${invite.code}`)
+}
+ 
+})
+  if (nul > 0) {
+      const e = new Discord.RichEmbed()
+      .addField(`${message.author.username}`, `لقد قمت بدعوة **${nul}** شخص`)
+      .setColor('#36393e')
+      message.channel.send(e)
+  }else {
+                       var embed = new Discord.RichEmbed()
+                        .setColor("#000000")
+                        .addField(`${message.author.username}`, `لم تقم بدعوة أي شخص لهذة السيرفر`)
+
+                       message.channel.send({ embed: embed });
+                        return;
+                    }
+}).then(m => {
+if (codes.length < 0) {
+    var embed = new Discord.RichEmbed()
+.setColor("#000000")
+.addField(`Your invites in ${message.guild.name}`, `You currently don't have any active invites! Please create an invite and start inviting, then you will be able to see your codes here!`)
+message.channel.send({ embed: embed });
+return;
+} else {
+    var embed = new Discord.RichEmbed()
+.setColor("#000000")
+.addField(`Your invites in ${message.guild.name}`, `Invites :\n${codes.join("\n")}`)
+.setColor('#36393e')
+message.channel.send({ embed: embed });
+return;
+}
+})
+}
+
+});
+
 
 
 client.login(process.env.BOT_TOKEN);
