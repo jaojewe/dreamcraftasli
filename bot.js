@@ -63,7 +63,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if(message.content === "+serv-bot") {
+    if(message.content === "+server-bot") {
         const embed = new Discord.RichEmbed()
         .setColor("#00FFFF")
         .setDescription(`**Servers**🌐 **__${client.guilds.size}__**
@@ -103,6 +103,73 @@ client.on('message', message => {
     }
 })
 
+
+ 
+ client.on('message', message => {
+   if (message.content.startsWith("+عقاب")) {
+                if(!message.channel.guild) return message.reply('** This command only for servers**');
+  var embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+   .setThumbnail(message.author.avatarURL) 
+ .addField('Drak . Bot' ,
+  `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
+  message.channel.sendEmbed(embed);
+  console.log('[38ab] Send By: ' + message.author.username)
+    }
+});
+
+
+
+ 
+client.on('message', function(msg) {
+    const prefix = '+'
+    if(msg.content.startsWith (prefix  + 'server')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+      .addField(':globe_with_meridians:** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
+      .addField(':medal:** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
+      .addField(':red_circle:**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
+      .addField(':large_blue_circle:**__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField(':pencil:**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField(':microphone:**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField(':crown:**__ الأونـر__**',`**${msg.guild.owner}**`,true)
+      .addField(':id:**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
+      .addField(':date:**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+      msg.channel.send({embed:embed});
+    }
+  });
+
+
+
+client.on('message', message => {
+
+    if (message.content.startsWith("+link")) {        
+  message.channel.createInvite({
+        thing: true,
+        maxUses: 100,
+        maxAge: 86400
+    }).then(invite =>  
+      message.author.sendMessage(invite.url)
+    )
+    const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription(" :white_check_mark: تم ارسال الرابط على الخاص ")
+      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
+              const Embed11 = new Discord.RichEmbed()
+        .setColor("RANDOM")
+                .setAuthor(message.guild.name, message.guild.iconURL)
+        .setDescription(`
+---------------------
+ :kissing_closed_eyes:  - هذا الرابط صالح ل 100 مستخدم فقط
+---------------------
+ :smiley: - هذا الرابط صالح لمده 24 ساعه فقط
+---------------------`)
+      message.author.sendEmbed(Embed11)
+    }
+ 
+});
 
 
 
