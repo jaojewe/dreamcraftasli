@@ -1270,15 +1270,6 @@ var prefix = "+";
 	
 
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '+invite') {
-      message.author.send(' رابط البوت |  https://discordapp.com/oauth2/authorize?client_id=475285011646644224&permissions=8&scope=bot&permissions=0 ').catch(e => console.log(e.stack));
-
-    }
-   } 
-  });
-
 
  
 client.on('message', message => {
