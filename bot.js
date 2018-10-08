@@ -1624,6 +1624,13 @@ client.on('message', message => {
     }
   });
 
+client.on('message', msg => {
+  if (msg.content === '+invite') {
+    msg.reply(', https://discordapp.com/oauth2/authorize?client_id=475285011646644224&permissions=8&scope=bot');
+  }
+});
+
+
 
 
 client.login(process.env.BOT_TOKEN);
