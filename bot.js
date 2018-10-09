@@ -1775,6 +1775,7 @@ client.on("message", message => {
       .setColor("RANDOM")
       .setThumbnail(message.author.avatarURL)
       .setDescription(`**
+__~~DreamCraft Bot ~~__ By: ! Dream ! hamodii_yt#8531
 
 
 
