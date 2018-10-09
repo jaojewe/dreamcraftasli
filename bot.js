@@ -4,7 +4,7 @@ const prefix = '+'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`)`,"")
+client.user.setGame(`DreamCraft l +help`,"Playing")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
