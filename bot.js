@@ -1761,6 +1761,77 @@ client.on("ready", () => {
 
 
 
+client.on("message", message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help ") {
+  const embedss6 = new Discord.RichEmbed() 
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`**
+    شيك على الخاص
+     Check Your DM**`)
+
+		 message.channel.send(`<@${message.author.id}>`, {embed : embedss6});
+  const embed = new Discord.RichEmbed() 
+      .setColor("RANDOM")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`**
+
+
+
+
+__1__ = +ping - __To Speed Ping Bot__
+
+__2__ = +server - __معلومات السيرفر __
+
+__3__ = +link - __To Create Link Server__
+
+__4__ = +rules - __قوانين السيرفر  __
+
+__5__ = +date - __To See Date __
+
+__6__ = +ct - __إنـشاء روم كـتابـي__
+
+__7__ = +cv - __تـم إنـشاء روم صـوتي__
+
+__8__ = +kick - __Kick Member__
+
+__9__ = +ban - __ban Member__
+
+__10__ = +unban - __Unban Member__
+
+__11__ = +info - __Info__
+
+__12__ = +mutechannel - __mutechannel__
+
+__13__ = +unmutechannel - __Unmutechannel__
+
+__14__ = +myinv - __see your invites__
+
+__15__ = +clear - __clear text__
+
+         **Games**
+__1__ = +اسألني 
+
+__12__ = +لوخيروك 
+
+       **Also __Soon__**
+
+❖ Close to more of the soundboard commands for introspection
+
+**
+`)
+
+       .setTimestamp()
+       .setFooter(message.author.username, message.author.avatarURL)
+message.author.sendEmbed(embed)
+
+.catch(() => {
+  message.channel.send('🚫الخاص مغلق');
+});
+
+}
+});
 
 
 
