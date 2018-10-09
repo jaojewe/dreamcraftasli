@@ -1733,7 +1733,7 @@ if(message.content.startsWith(prefix + 'color')) {
 client.on('ready', function(){    
     var ms = 150000 ; 
     var prefix = "-"; 
-    var setGame = [`المستخدمين : ${client.users.size}`,`${prefix}help`,`االسيرفرات : ${client.guilds.size}`];    // لا تلعب بشيء
+    var setGame = [`المستخدمين : ${client.users.size}`,`${prefix}help`,`االسيرفرات : ${client.guilds.size}`];  
     var i = -1;    
     var j = 0;    
     setInterval(function (){    
