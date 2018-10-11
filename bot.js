@@ -1797,8 +1797,8 @@ client.on("guildMemberAdd", (member) => {
 
 
 
-const fs = require('fs'); // npm i fs
-const ms = require('ms'); // npm i ms
+const fs = require('fs'); 
+const ms = require('ms'); 
 const cool = [];
 client.on('message',async message => {
   if(message.author.bot) return;
