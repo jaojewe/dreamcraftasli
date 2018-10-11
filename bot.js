@@ -1323,6 +1323,10 @@ Bot BY ! Dream ! hamodii_yt#8531
 
 ❖ +date ➾ see date 
 
+❖ +credit ➾ الكريدي حقك
+
+❖ +daily ➾ مرتب اليومي
+
 ❖ +members ➾ see Members
 
 ❖ +hack ➾ لعبه الهاك 
