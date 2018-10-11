@@ -1655,34 +1655,6 @@ if(message.content.startsWith(prefix + 'color')) {
 
 
 
-client.on('ready', function(){    
-    var ms = 150000 ; 
-    var prefix = "+"; 
-    var setGame = [`المستخدمين : ${client.users.size}`,`${prefix}help`,`االسيرفرات : ${client.guilds.size}`];  
-    var i = -1;    
-    var j = 0;    
-    setInterval(function (){    
-        if( i == -1 ){    
-j = 1;    
-       }    
-        if( i == (setGame.length)-1 ){    
-            j = -1;    
-      }    
-       i = i+j;    
-        client.user.setGame(setGame[i],``);    
-}, ms);    
-    
-});
-
-
-
-client.on("ready", () => {
-    client.user.setGame("on " + client.users.size + " users")
-}).on("guildCreate", () => {
-    client.user.setGame("on " + client.users.size + " users")
-}).on("guildDelete", () => {
-    client.user.setGame("on " + client.users.size + " users")
-})
 
 
 
