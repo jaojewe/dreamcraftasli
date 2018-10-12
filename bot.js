@@ -2040,46 +2040,6 @@ if(message.channel.type === 'dm') return
 });
 
 
-const yourID = "428890200735875073"; 
-const setupCMD = "!createrolemessage"
-let initialMessage = `**React to the messages below to receive the associated role. If you would like to remove the role, simply remove your reaction!**`;
-const roles = ["Hacker", "Artist", "Public Relations", "Intern"];
-const reactions = ["ًں’»", "ًں–Œ", "ًںکƒ", "ًں†•"];
-const botToken = "NDc1Mjg1MDExNjQ2NjQ0MjI0.Dkcznw.M34SccQdK7Rc7elFjtt-uD682gw"; 
-                     
- 
-
-const Discord = require('discord.js');
-const bot = new Discord.Client();
-bot.login(botToken);
- 
-
-if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
- 
-
-function generateMessages(){
-    var messages = [];
-    messages.push(initialMessage);
-    for (let role of roles) messages.push(`React below to get the **"${role}"** role!`); //DONT CHANGE THIS // AlphaCodes لا تغير الكلام الي هنا
-    return messages;
-}
- 
- 
-bot.on("message", message => {
-    if (message.author.id == yourID && message.content.toLowerCase() == setupCMD){
-        var toSend = generateMessages();
-        let mappedArray = [[toSend[0], false], ...toSend.slice(1).map( (message, idx) => [message, reactions[idx]])];
-        for (let mapObj of mappedArray){
-            message.channel.send(mapObj[0]).then( sent => {
-                if (mapObj[1]){
-                  sent.react(mapObj[1]);  
-                }
-            });
-        }
-    }
-})
- 
-
 
 
 
