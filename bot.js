@@ -1361,6 +1361,8 @@ By ! Dream ! hamodii_yt#8531
 
 bot invite link: https://discordapp.com/oauth2/authorize?client_id=475285011646644224&permissions=8&scope=bot
 
+https://discord.gg/5HUPK8Z
+
 ==================================================================
 
 `);
