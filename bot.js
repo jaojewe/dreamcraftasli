@@ -754,7 +754,7 @@ client.on('message' , message => {
          client.on('message', message => {
             if (message.content === 'هلا') {
               message.channel.send('هلا حبي :heart: ');
-    message.reply(message.author.avatarURL); 
+    
                
 
             }
