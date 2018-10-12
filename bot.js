@@ -1329,7 +1329,7 @@ Bot BY ! Dream ! hamodii_yt#8531
 
 ❖ +ticket ➾ فتح تكت للمساعده  
 
-لقفلها `+close`
+لقفلها __+close__
 
 ❖ +members ➾ see Members
 
