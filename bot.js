@@ -1324,8 +1324,12 @@ Bot BY ! Dream ! hamodii_yt#8531
 ❖ +date ➾ see date 
 
 ❖ +credit ➾ الكريدي حقك
-
+                         لسا صيانه
 ❖ +daily ➾ مرتب اليومي
+
+❖ +ticket ➾ فتح تكت للمساعده  
+
+لقفلها `+close`
 
 ❖ +members ➾ see Members
 
